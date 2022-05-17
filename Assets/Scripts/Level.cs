@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] int level;
+    int level;
     [SerializeField] TMP_Text text;
     [SerializeField] GameObject overlay;
     // Start is called before the first frame update
+    void Start()
+    {
+        level = 1;
+    }
     public int GetLevel()
     {
         return level;
@@ -17,6 +21,7 @@ public class Level : MonoBehaviour
 
     public void IncreaseLevel()
     {
+        print("increased");
         level++;
         text.text = "Level " + level;
     }

@@ -19,6 +19,7 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.tag != "Player") return;
         Level playerLevel = player.GetComponent<Level>();
         playerLevel.IncreaseLevel();
         player.transform.position = new Vector3(1.29f, -7.18f, 0.06319202f);
